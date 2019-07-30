@@ -402,7 +402,7 @@ Begin VB.Form PGM_Menu
    End
    Begin VB.Label Label1 
       BackColor       =   &H00E0E0E0&
-      Caption         =   "NQD-71_Ver190427d"
+      Caption         =   "NQD-71_Ver190427e"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
          Size            =   12
@@ -1039,7 +1039,9 @@ Attribute VB_Exposed = False
 '       Ver.NQD_71_190427c 2019. 5.11.s.f.   coxデータのＨＤへの書き出し（毎回)　2019.5.11追加
 '                                            型順表示位置(プログラムに実施タイミング変更。成形サイクルの開始時に移動
 '       Ver.NQD_71_190427d 2019. 5.20.s.f.   型順表示位置”XR"へ戻す。成形室型有りをshot数カウントアップ条件へ、型表示変数書き込みは、coxファイル読み込み後へ
-'
+'       Ver.NQD_71_190427e 2019. 5.25.s.f.   成形データ表示"、　”→”、　　”へ　空白増。待ち時間入力制限　1000”→2400”　へ
+'                                             周回数　９９（旧５０）オーバーでプログラムストップを回避する。
+'                                            TBK/TEの切り替え　if文へ変更。　PGM_KTDのGlobalConstを書き換えるのみ（1か所：３個）
 '
 '///////////////////////////////////////////////////////
 '　　　TBK&TE　統合　　　Keyword=TBK/TE　　　 11箇所  Menu,KTD,FbiDio,MplBDef,MyLib

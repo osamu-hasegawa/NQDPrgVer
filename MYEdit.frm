@@ -5089,7 +5089,8 @@ Dim j%
 ' ---------------- 待ち時間
   For j = 0 To 4
     lK8 = 1
-    VScroll8(j).min = 1000 * lK8
+    VScroll8(j).min = 2400 * lK8      '2019.5.25
+'    VScroll8(j).min = 1000 * lK8
     VScroll8(j).max = 0 * lK8
     VScroll8(j).LargeChange = 10 * lK8
     VScroll8(j).SmallChange = 1 * lK8
@@ -5097,7 +5098,8 @@ Dim j%
 ' ---------------- 温度係数ｃｏｎｔ、　型個数、ポインター
   For j = 0 To 2        ' j=3 は、VISIBLE=falseのため　0,1,2まで
     lK9 = 1
-    VScroll9(j).min = 50 * lK9      '  max=10 -> max=50 he  2010.6.23
+    VScroll9(j).min = 99 * lK9      '  max=50 -> max=99 he  2019.5.25
+'    VScroll9(j).min = 50 * lK9      '  max=10 -> max=50 he  2010.6.23
     VScroll9(j).max = 1 * lK9
     VScroll9(j).LargeChange = 1 * lK9
     VScroll9(j).SmallChange = 1 * lK9

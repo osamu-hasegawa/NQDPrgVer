@@ -2904,7 +2904,7 @@ Dim dumlbl14$
   Label12(0).Visible = False
   Label12(1).Visible = False
   Label12(2).Visible = False
-  command1.Visible = False
+  Command1.Visible = False
   iflgSCopy = 0
 '
 '----------------------- 連続成形メインプログラム
@@ -3660,7 +3660,7 @@ sj1:
                  Label12(0).Visible = True
                  Label12(1).Visible = True
                  Label12(2).Visible = True
-                 command1.Visible = True
+                 Command1.Visible = True
                  Label12(0).Caption = "保温停止中"
                  Label12(1).Caption = " 経過時間"
                   
@@ -3684,7 +3684,7 @@ sj1:
                  Label12(0).Visible = False
                  Label12(1).Visible = False
                  Label12(2).Visible = False
-                 command1.Visible = False
+                 Command1.Visible = False
                   iHoteikanryou = 1
                   iflg = 1
                   GoTo caselend2:
@@ -4247,20 +4247,21 @@ send:
 '　 --- /*　成形データの表示（リスト表示）　*/  2002.12.3 sf  ---
 '        InitDat(11)=成形回数（ショット数）
 ' ---  "," カンマ区切りへ変更　2019.4.27
-      Rec_of_Mold = Format(InitDat(11), "000") & ", " & Format(ishu, "0") & ", " & Format(T_keisuCont(1), "0")
-      Rec_of_Mold = Rec_of_Mold & ", " & kataNo(ikn) & ", " & Format(ShotSu(ikn), "0")
-      Rec_of_Mold = Rec_of_Mold & ", " & Format(z(iz3), "000.00")
-      Rec_of_Mold = Rec_of_Mold & ", " & Format(Int(ct_temp(0)), "000") & "℃, " & Format(Int(ct_temp(1)), "000") & "℃"
-      Rec_of_Mold = Rec_of_Mold & ", " & Format(Int(cc_time(1) / 60), "0") & ":" & Format(Int(cc_time(1)) Mod 60, "00")
-      Rec_of_Mold = Rec_of_Mold & ", " & Format(Int(cc_time(2) / 60), "0") & ":" & Format(Int(cc_time(2)) Mod 60, "00")
-      Rec_of_Mold = Rec_of_Mold & ", " & Format(Int(cc_time(3) / 60), "0") & ":" & Format(Int(cc_time(3)) Mod 60, "00")
+      Rec_of_Mold = Format(InitDat(11), "000") & ",  " & Format(ishu, "0") & ",  " & Format(T_keisuCont(1), "0")
+      Rec_of_Mold = Rec_of_Mold & ",  " & kataNo(ikn) & ",  " & Format(ShotSu(ikn), "0")
+      Rec_of_Mold = Rec_of_Mold & ",  " & Format(z(iz3), "000.00")
+      Rec_of_Mold = Rec_of_Mold & ",  " & Format(Int(ct_temp(0)), "000") & "℃,  " & Format(Int(ct_temp(1)), "000") & "℃"
+      Rec_of_Mold = Rec_of_Mold & ",  " & Format(Int(cc_time(1) / 60), "0") & ":" & Format(Int(cc_time(1)) Mod 60, "00")
+      Rec_of_Mold = Rec_of_Mold & ",  " & Format(Int(cc_time(2) / 60), "0") & ":" & Format(Int(cc_time(2)) Mod 60, "00")
+      Rec_of_Mold = Rec_of_Mold & ",  " & Format(Int(cc_time(3) / 60), "0") & ":" & Format(Int(cc_time(3)) Mod 60, "00")
       diTime1 = diffTime(cc_time(3), cc_time(2))
-      Rec_of_Mold = Rec_of_Mold & ", " & Format(Int(diTime1 + 0.5), "000") & "s"
-      Rec_of_Mold = Rec_of_Mold & ", " & Format(cp_z, "000.000")
-      Rec_of_Mold = Rec_of_Mold & ", " & Format(Int(stime / 60), "0") & ":" & Format(Int(stime) Mod 60, "00")
-      Rec_of_Mold = Rec_of_Mold & ", " & Format(T_keisu(T_keisuCont(1) - 1), "0.000") & ", " & Format(Z3_Hosei(T_keisuCont(1) - 1), "0.000")
-      Rec_of_Mold = Rec_of_Mold & ", " & Format(avekatJ(T_keisuCont(1) - 1), "000") & ", " & Format(iHoonStopNo, "###0") & ", " & Format(zzz, "000.000")  'SP7 180901
-      If AlmON = True Then Rec_of_Mold = Rec_of_Mold & ", " & Almdisp
+      Rec_of_Mold = Rec_of_Mold & ",  " & Format(Int(diTime1 + 0.5), "000") & "s"
+      Rec_of_Mold = Rec_of_Mold & ",  " & Format(cp_z, "000.000")
+      Rec_of_Mold = Rec_of_Mold & ",  " & Format(Int(stime / 60), "0") & ":" & Format(Int(stime) Mod 60, "00")
+      Rec_of_Mold = Rec_of_Mold & ",  " & Format(T_keisu(T_keisuCont(1) - 1), "0.000") & ",  " & Format(Z3_Hosei(T_keisuCont(1) - 1), "0.000")
+'      Rec_of_Mold = Rec_of_Mold & ",  " & Format(avekatJ(T_keisuCont(1) - 1), "000") & ",  " & Format(iHoonStopNo, "###0") & ",  " & Format(zzz, "000.000")  'SP7 180901
+      Rec_of_Mold = Rec_of_Mold & ",  " & Format(avekatJ(T_keisuCont(1) - 1), "000") & ",  " & Format(iHoonStopNo, "###0")
+      If AlmON = True Then Rec_of_Mold = Rec_of_Mold & ",  " & Almdisp
 '
 '      Rec_of_Mold = Format(InitDat(11), "000") & "  " & Format(ishu, "0") & " " & Format(T_keisuCont(1), "0") & " "
 '      Rec_of_Mold = Rec_of_Mold & " " & kataNo(ikn) & " =" & Format(ShotSu(ikn), "0") & "  "
@@ -4297,6 +4298,7 @@ send:
         T_keisuCont(1) = 1
         ishu = ishu + 1
       End If
+      If ishu > 99 Then ishu = 1   ' 入力制限オーバーでプログラムストップを避けるため 20195.25
 '
       T_keisuCont(2) = T_keisuCont(1)           ' ** ポインターのBuckup **
       T_keisuCont(3) = T_keisuCont(0)           ' ** 型個数　のBuckup **
