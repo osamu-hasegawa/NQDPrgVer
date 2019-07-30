@@ -3,22 +3,22 @@ Begin VB.Form NQD70_SC
    Appearance      =   0  'ﾌﾗｯﾄ
    BackColor       =   &H00C0C0C0&
    Caption         =   "連続成形"
-   ClientHeight    =   8535
-   ClientLeft      =   135
+   ClientHeight    =   8532
+   ClientLeft      =   132
    ClientTop       =   420
-   ClientWidth     =   11835
+   ClientWidth     =   11844
    ControlBox      =   0   'False
    FillColor       =   &H00C0C0C0&
    ForeColor       =   &H00800000&
    LinkTopic       =   "Form1"
-   ScaleHeight     =   8535
-   ScaleWidth      =   11835
+   ScaleHeight     =   8532
+   ScaleWidth      =   11844
    Begin VB.CommandButton Command2 
       BackColor       =   &H00FFFFFF&
       Caption         =   "Scr.Copy"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -174,7 +174,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "5分停止"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   7.5
+         Size            =   7.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -194,7 +194,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "保温停止"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   7.5
+         Size            =   7.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -210,11 +210,10 @@ Begin VB.Form NQD70_SC
       Width           =   500
    End
    Begin VB.CommandButton Command2 
-      Caption         =   "S"
-      Enabled         =   0   'False
+      Caption         =   "GraphDataSave"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   10.5
+         Size            =   7.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -223,24 +222,23 @@ Begin VB.Form NQD70_SC
       EndProperty
       Height          =   300
       Index           =   5
-      Left            =   1440
+      Left            =   120
       TabIndex        =   57
-      Top             =   1320
-      Visible         =   0   'False
-      Width           =   345
+      Top             =   600
+      Width           =   1428
    End
    Begin VB.ListBox List1 
       BackColor       =   &H00C0C0C0&
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   7.5
+         Size            =   7.8
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1110
+      Height          =   1140
       Left            =   2088
       TabIndex        =   77
       Top             =   1080
@@ -255,7 +253,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "強制ソーク"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   7.5
+         Size            =   7.8
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -275,7 +273,7 @@ Begin VB.Form NQD70_SC
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -284,9 +282,9 @@ Begin VB.Form NQD70_SC
       EndProperty
       Height          =   300
       Index           =   4
-      Left            =   120
+      Left            =   0
       TabIndex        =   56
-      Top             =   1200
+      Top             =   1320
       Visible         =   0   'False
       Width           =   1692
    End
@@ -295,7 +293,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "V エディタ"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -307,7 +305,7 @@ Begin VB.Form NQD70_SC
       Left            =   120
       Style           =   1  'ｸﾞﾗﾌｨｯｸｽ
       TabIndex        =   54
-      Top             =   960
+      Top             =   1080
       Width           =   1440
    End
    Begin VB.Timer Timer1 
@@ -323,8 +321,8 @@ Begin VB.Form NQD70_SC
       ForeColor       =   &H80000008&
       Height          =   5136
       Left            =   1800
-      ScaleHeight     =   5100
-      ScaleWidth      =   8370
+      ScaleHeight     =   5112
+      ScaleWidth      =   8376
       TabIndex        =   8
       Top             =   2240
       Width           =   8400
@@ -347,6 +345,18 @@ Begin VB.Form NQD70_SC
          TabIndex        =   93
          Top             =   240
          Width           =   4932
+      End
+      Begin VB.Label Label14 
+         Appearance      =   0  'ﾌﾗｯﾄ
+         BackColor       =   &H00800000&
+         BackStyle       =   0  '透明
+         Caption         =   "Label14"
+         ForeColor       =   &H00FFFFFF&
+         Height          =   252
+         Left            =   0
+         TabIndex        =   125
+         Top             =   1080
+         Width           =   8292
       End
       Begin VB.Label Label10 
          Appearance      =   0  'ﾌﾗｯﾄ
@@ -437,7 +447,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "終了"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -499,7 +509,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label12"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -518,7 +528,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label12"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -685,7 +695,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "  Z3補正"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   7.5
+         Size            =   7.8
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -703,7 +713,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "  Ｔ係数"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   7.5
+         Size            =   7.8
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -721,7 +731,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label6"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -739,7 +749,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label6"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -757,7 +767,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label6"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -775,7 +785,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label6"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -793,7 +803,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label6"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -811,7 +821,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label6"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -829,7 +839,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label6"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -847,7 +857,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label6"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -865,7 +875,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label6"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -883,7 +893,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label6"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -928,7 +938,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label4"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -946,7 +956,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label4"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -964,7 +974,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label4"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -982,7 +992,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label4"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -1000,7 +1010,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label4"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -1018,7 +1028,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label4"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -1036,7 +1046,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label4"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -1072,7 +1082,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label4"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   8.25
+         Size            =   8.4
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -1248,7 +1258,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "ショット数："
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1269,7 +1279,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "サイクルタイム："
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1369,7 +1379,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label2"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1388,7 +1398,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label2"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1408,7 +1418,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label2"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1429,7 +1439,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "成形状態："
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   11.25
+         Size            =   11.4
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1452,7 +1462,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "(分)"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1474,7 +1484,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "経過時間"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1535,7 +1545,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1556,7 +1566,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1577,7 +1587,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1598,7 +1608,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1619,7 +1629,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1640,7 +1650,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1678,7 +1688,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "型温度"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1700,7 +1710,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "(℃)"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1778,7 +1788,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "####"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1799,7 +1809,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1820,7 +1830,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1841,7 +1851,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1862,7 +1872,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1883,7 +1893,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1905,7 +1915,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "型締圧"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -1927,7 +1937,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "(kg)"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -2004,7 +2014,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -2025,7 +2035,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -2046,7 +2056,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -2067,7 +2077,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -2088,7 +2098,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -2109,7 +2119,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -2131,7 +2141,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "座標"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -2153,7 +2163,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "(mm)"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -2230,7 +2240,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -2251,7 +2261,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -2272,7 +2282,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -2293,7 +2303,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -2314,7 +2324,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -2335,7 +2345,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "###"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -2356,7 +2366,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "コメント："
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   11.25
+         Size            =   11.4
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -2376,7 +2386,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "Label2"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -2415,7 +2425,7 @@ Begin VB.Form NQD70_SC
       Caption         =   "制御ファイル名："
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   11.25
+         Size            =   11.4
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -2611,6 +2621,7 @@ Dim lViewFlg      '前の画面番号
 Dim NextView%
 Dim NextViewBUp%  'NextViewの内容backup
 Dim lDtSaveFlg%   'データ保存
+Dim iDtSaveCount%  'データ保存回数　　max=14　20190427追加
 Dim idcflg%(0 To 3)        ' DCフラグ　形無=1　型有=0
 Dim SokuCor!(0 To 1)  '強制ソークタイムのコマンド釦の色
 Dim TKatBackCol!(0 To 1)  '加圧時間補正　上限加減　表示のbackColor
@@ -2691,8 +2702,19 @@ Case 3                        'edit　の　'02/8暫定変更(s.f)
 '
 Case 4      '真空到達
   gVumFlg = 1                       '真空到達=1
-Case 5      '"S" ;データセーブ
-  lDtSaveFlg = True
+Case 5      '"Save" ;データセーブ
+'
+    If lDtSaveFlg = True Then
+          lDtSaveFlg = False          'データセーブ　受付解除
+          Command2(5).BackColor = CmndColoff(1)    ' off gray
+          Command2(5).Caption = "GraphDataSave"
+    Else
+          lDtSaveFlg = True           'データセーブ　受付
+          Command2(5).BackColor = CmndColon(1)   ' on 1= red
+          Command2(5).Caption = "DataSave中"
+          iDtSaveCount = 14
+  End If
+'
 Case 8      '強制ソークタイム
   If lSokuFlg = True Then
           lSokuFlg = False          '強制ソークタイム　受付解除
@@ -2751,7 +2773,8 @@ Private Sub Form_Load()
   SokuCor(0) = &H8000000F     '強制ソークタイムのコマンド釦の色
   SokuCor(1) = &HFF&          '強制ソークタイムのコマンド釦の色 押されたとき
   lDtSaveFlg = False      'データ保存
-'  lSokuFlg = False        '強制ソークタイム   GPM_KTDへ   2007.11.19
+  iDtSaveCount = 0        'データ保存回数　初期値=0
+'
   If lSokuFlg = False Then
           Command2(8).BackColor = SokuCor(0)
     Else
@@ -2811,7 +2834,6 @@ Dim i%, p%, max!, min!, def!, dev%
   Next i
 '
 End Sub
-
 Private Sub Timer1_Timer()
   Timer1.Enabled = False
   LS21S_MAIN
@@ -2854,6 +2876,8 @@ Dim zclear!
 Dim idum%, iidum%       ' 090803 tsuika
 Dim tudiffTime!
 Dim iSento_flg%         ' 先頭ダミーﾌﾗｸﾞ
+Dim zzz!    ' 2013.4.6 高さ到達時の　Ｚ座標値  SP7  180901
+Dim dumlbl14$
 '
  On Error GoTo errHandler:
 ' ---  init  val-----------------
@@ -3345,7 +3369,9 @@ TimeUpEnd:
              ppos = "SC JkE1 sts=C870"
          If (sts And &H1) <> 0 Then      ' 成立で「-1」　　不成立で「0」
             ist0 = ist0 + 1             '/* 位置達成で終了 */
-            Label2(6).Caption = "位置 pass CNT " & Str(ist0)   '11/2 sf
+            zzz = r_z()
+            Label2(6).Caption = "位置 pass CNT " & Str(ist0) & " " & Str(zzz)   '11/2 sf & SP7  180901
+'            Label2(6).Caption = "位置 pass CNT " & Str(ist0)   '11/2 sf
             rstcm1   '  compareter reset
 '            Ready_Wait    '
          Else                       ' 2008.2.21  変更　１秒に１回行き過ぎを確認へ
@@ -3371,7 +3397,9 @@ TimeUpEnd:
            ppos = "SC JkE3 sts=C870"
           If (sts And &H1) <> 0 Then
             ist0 = ist0 + 1             '/* 位置達成で終了 */
-            Label2(6).Caption = "位置 pass CNT " & Str(ist0)   '11/2 sf
+            zzz = r_z()
+            Label2(6).Caption = "位置 pass CNT " & Str(ist0) & " " & Str(zzz)   '11/2 sf & SP7 180901
+'            Label2(6).Caption = "位置 pass CNT " & Str(ist0)   '11/2 sf
             rstcm1   '  compareter reset
          Else                       ' 2008.2.21  変更　１秒に１回行き過ぎを確認へ
            If Int(mTime) = Int(Timer) Then
@@ -3412,7 +3440,9 @@ TimeUpEnd:
           sts = C870Sts(3)  'status3 を読む
           If (sts And &H1) <> 0 Then
             ist0 = ist0 + 1             '/* 位置達成で終了 */
-            Label2(6).Caption = "位置 pass CNT " & Str(ist0)   '11/2 sf
+             zzz = r_z()
+            Label2(6).Caption = "位置 pass CNT " & Str(ist0) & " " & Str(zzz)   '11/2 sf & SP7  180901
+'           Label2(6).Caption = "位置 pass CNT " & Str(ist0)   '11/2 sf
             rstcm1   '  compareter reset
 '            Ready_Wait    '
 '            Do                 'Do Loop  ' 2005.11.22 削除　　一度読んだらstatusはresetされる。2度読み不可！！
@@ -4017,6 +4047,8 @@ cjump:
         Unload frmerr_sign
       End If
 '
+'/*　経過時間取り込み */
+          KeikaTime(i) = i  '2019.4.28
 '/*　温度取り込み */
 '          DoEvents               '2005.12.17 OverFlow 対策 s.f.
           atemp(i, 0) = TempRdMold(0)   'スリーブ温度 0V-300℃ 1V-1300℃
@@ -4062,6 +4094,7 @@ jo0:
 '          sdt2 = sdt2 & "tt   " & Format(diffTime(it0, stTime), "0.0")    '2005.11.23 時間削減のため削除
           Label2(11).Caption = sdt2
 '
+            KeikaTime(i) = i  '2019.4.28 ここへ引っ越し
 '/* 時刻表示 */
           Label8.Caption = Time$
 '
@@ -4186,26 +4219,60 @@ send:
         If iflgKataTorF(T_keisuCont(1) - 1) = False Then AlmON = False
         If i_s < 1 Then AlmON = False
         If AlmON = True Then List3.AddItem Almdisp, 0
+'
+'　 --- /*　現在成形中金型の 型No 確認　20190427 sf  ---
+'　　　　　　　　　'　３は成形室　　label13(3)
+        ikn = katamax - 3 + kataNoPnt + katamax + 1 + Val(kataNo(10))
+'
+        For iii = 1 To 4
+            If ikn > katamax Then ikn = ikn - (katamax + 1)
+        Next iii
+         
+ '--- /* 　カウントアップ　---/*
+        If (kataNo(ikn) <> "") Then ShotSu(ikn) = ShotSu(ikn) + 1
+        
+ '--- /* 　shot数の画面グラフ内表示　---/*
+        dumlbl14 = kataNo(0) & "=" & Format(ShotSu(0), "0") & "  " & kataNo(1) & "=" & Format(ShotSu(1), "0") & "  "
+        dumlbl14 = dumlbl14 & kataNo(2) & "=" & Format(ShotSu(2), "0") & "  " & kataNo(3) & "=" & Format(ShotSu(3), "0") & "  "
+        dumlbl14 = dumlbl14 & kataNo(4) & "=" & Format(ShotSu(4), "0") & "  " & kataNo(5) & "=" & Format(ShotSu(5), "0") & "  "
+        dumlbl14 = dumlbl14 & kataNo(6) & "=" & Format(ShotSu(6), "0")
+        Label14.Caption = dumlbl14
+        
 '　 --- /*　成形データの表示（リスト表示）　*/  2002.12.3 sf  ---
 '        InitDat(11)=成形回数（ショット数）
-'
-      Rec_of_Mold = Format(InitDat(11), "000") & "  " & Format(ishu, "0") & " " & Format(T_keisuCont(1), "0") & " "
-      Rec_of_Mold = Rec_of_Mold & " " & Format(z(iz3), "000.00") & "    "
-      Rec_of_Mold = Rec_of_Mold & " " & Format(Int(ct_temp(0)), "000") & "℃ " & Format(Int(ct_temp(1)), "000") & "℃  "
-      Rec_of_Mold = Rec_of_Mold & " " & Format(Int(cc_time(1) / 60), "0") & ":" & Format(Int(cc_time(1)) Mod 60, "00") & " "
-      Rec_of_Mold = Rec_of_Mold & " " & Format(Int(cc_time(2) / 60), "0") & ":" & Format(Int(cc_time(2)) Mod 60, "00") & " "
-      Rec_of_Mold = Rec_of_Mold & " " & Format(Int(cc_time(3) / 60), "0") & ":" & Format(Int(cc_time(3)) Mod 60, "00") & " "
+' ---  "," カンマ区切りへ変更　2019.4.27
+      Rec_of_Mold = Format(InitDat(11), "000") & ", " & Format(ishu, "0") & ", " & Format(T_keisuCont(1), "0")
+      Rec_of_Mold = Rec_of_Mold & ", " & kataNo(ikn) & ", " & Format(ShotSu(ikn), "0")
+      Rec_of_Mold = Rec_of_Mold & ", " & Format(z(iz3), "000.00")
+      Rec_of_Mold = Rec_of_Mold & ", " & Format(Int(ct_temp(0)), "000") & "℃, " & Format(Int(ct_temp(1)), "000") & "℃"
+      Rec_of_Mold = Rec_of_Mold & ", " & Format(Int(cc_time(1) / 60), "0") & ":" & Format(Int(cc_time(1)) Mod 60, "00")
+      Rec_of_Mold = Rec_of_Mold & ", " & Format(Int(cc_time(2) / 60), "0") & ":" & Format(Int(cc_time(2)) Mod 60, "00")
+      Rec_of_Mold = Rec_of_Mold & ", " & Format(Int(cc_time(3) / 60), "0") & ":" & Format(Int(cc_time(3)) Mod 60, "00")
       diTime1 = diffTime(cc_time(3), cc_time(2))
-      Rec_of_Mold = Rec_of_Mold & "  " & Format(Int(diTime1 + 0.5), "000") & "s "
-      Rec_of_Mold = Rec_of_Mold & "  " & Format(cp_z, "000.000") & " "
-      Rec_of_Mold = Rec_of_Mold & "  " & Format(Int(stime / 60), "0") & ":" & Format(Int(stime) Mod 60, "00") & " "
-      Rec_of_Mold = Rec_of_Mold & "  " & Format(T_keisu(T_keisuCont(1) - 1), "0.000") & "    " & Format(Z3_Hosei(T_keisuCont(1) - 1), "0.000")
-      Rec_of_Mold = Rec_of_Mold & "  " & Format(avekatJ(T_keisuCont(1) - 1), "000") & "  " & Format(iHoonStopNo, "###0")
-      If AlmON = True Then Rec_of_Mold = Rec_of_Mold & "  " & Almdisp
+      Rec_of_Mold = Rec_of_Mold & ", " & Format(Int(diTime1 + 0.5), "000") & "s"
+      Rec_of_Mold = Rec_of_Mold & ", " & Format(cp_z, "000.000")
+      Rec_of_Mold = Rec_of_Mold & ", " & Format(Int(stime / 60), "0") & ":" & Format(Int(stime) Mod 60, "00")
+      Rec_of_Mold = Rec_of_Mold & ", " & Format(T_keisu(T_keisuCont(1) - 1), "0.000") & ", " & Format(Z3_Hosei(T_keisuCont(1) - 1), "0.000")
+      Rec_of_Mold = Rec_of_Mold & ", " & Format(avekatJ(T_keisuCont(1) - 1), "000") & ", " & Format(iHoonStopNo, "###0") & ", " & Format(zzz, "000.000")  'SP7 180901
+      If AlmON = True Then Rec_of_Mold = Rec_of_Mold & ", " & Almdisp
+'
+'      Rec_of_Mold = Format(InitDat(11), "000") & "  " & Format(ishu, "0") & " " & Format(T_keisuCont(1), "0") & " "
+'      Rec_of_Mold = Rec_of_Mold & " " & kataNo(ikn) & " =" & Format(ShotSu(ikn), "0") & "  "
+'      Rec_of_Mold = Rec_of_Mold & " " & Format(z(iz3), "000.00") & "    "
+'      Rec_of_Mold = Rec_of_Mold & " " & Format(Int(ct_temp(0)), "000") & "℃ " & Format(Int(ct_temp(1)), "000") & "℃  "
+'      Rec_of_Mold = Rec_of_Mold & " " & Format(Int(cc_time(1) / 60), "0") & ":" & Format(Int(cc_time(1)) Mod 60, "00") & " "
+'      Rec_of_Mold = Rec_of_Mold & " " & Format(Int(cc_time(2) / 60), "0") & ":" & Format(Int(cc_time(2)) Mod 60, "00") & " "
+'      Rec_of_Mold = Rec_of_Mold & " " & Format(Int(cc_time(3) / 60), "0") & ":" & Format(Int(cc_time(3)) Mod 60, "00") & " "
+'      diTime1 = diffTime(cc_time(3), cc_time(2))
+'      Rec_of_Mold = Rec_of_Mold & "  " & Format(Int(diTime1 + 0.5), "000") & "s "
+'      Rec_of_Mold = Rec_of_Mold & "  " & Format(cp_z, "000.000") & " "
+'      Rec_of_Mold = Rec_of_Mold & "  " & Format(Int(stime / 60), "0") & ":" & Format(Int(stime) Mod 60, "00") & " "
+'      Rec_of_Mold = Rec_of_Mold & "  " & Format(T_keisu(T_keisuCont(1) - 1), "0.000") & "    " & Format(Z3_Hosei(T_keisuCont(1) - 1), "0.000")
+'      Rec_of_Mold = Rec_of_Mold & "  " & Format(avekatJ(T_keisuCont(1) - 1), "000") & "  " & Format(iHoonStopNo, "###0") & "  " & Format(zzz, "000.000")  'SP7 180901
+'      If AlmON = True Then Rec_of_Mold = Rec_of_Mold & "  " & Almdisp
+'
       List1.AddItem Rec_of_Mold, 0    ' ”、0”　追加　2004.8.18
-'
       RecDtSave Rec_of_Mold
-'
 '
 '' /* 温度係数、肉厚補正データのカウントアップ
       Label4(T_keisuCont(1) - 1).ForeColor = T_keisuCol!(2)  '  文字色を元に戻す
@@ -4232,8 +4299,13 @@ send:
       Saikaiflg = False
 '/* データの保存　*/
       If lDtSaveFlg = True Then
-        ResDtSave i_s, stime
-        lDtSaveFlg = False
+        iDtSaveCount = iDtSaveCount - 1
+        If kataNo(ikn) <> "" Then ResDtSave i_s, stime
+        If iDtSaveCount <= 0 Then
+          lDtSaveFlg = False          'データセーブ　受付解除
+          Command2(5).BackColor = CmndColoff(1)    ' off gray
+          Command2(5).Caption = "GraphDataSave"
+        End If
       End If
 '
 ' ScreenCopy iflgSCopy=1 or 2  の場合、ScreenCopy

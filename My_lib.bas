@@ -22,6 +22,7 @@ Attribute VB_Name = "My_lib"
 '   update: 2008.11.17 s.f   cal_pid 「800kg以上で非常停止」　→　「１０００kg以上で非常停止」へ変更
 '   update: 2009. 8.17 s.f   Timer2func 追加 timer overflow 対策
 '　 update: 2012.04.15.s.f.　1ton越えの判断　１回→2回へ　　ＭｙＬｉｂ
+'　 update: 2014.10.09.s.f.　1ton越えの判断　１0回X10回の平均が１ton以上の時　１ton超え　　ＭｙＬｉｂ
 '
 '
 ''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -74,23 +75,24 @@ Dim adFlg As Long
     sumdt1 = sumdt1 + dtrp
    Next ll
    sumdt1 = sumdt1 / 10#
-    If sumdt1 > 1000# Then
-'        AdRead dt(), adFlg
-'        dtrp = dt(2) * 500#     '1ton越え　２回確認へ　2012.4.15
-'        If dtrp > 1000# Then
-'            gemgmsg = gemgmsg + "r_pres" + Format(dtrp, "0.0")   '2012.0830
-            gemgmsg = gemgmsg + "r_pres" + Format(sumdt1, "0.0")   '2012.0830 10回平均へ
-            iFlg_hijyou = 6       '  非常停止 r_pres 1ton越え
-'        End If
-    End If
+'    If sumdt1 > 1000# Then
+''        AdRead dt(), adFlg
+''        dtrp = dt(2) * 500#     '1ton越え　２回確認へ　2012.4.15
+''        If dtrp > 1000# Then
+''            gemgmsg = gemgmsg + "r_pres" + Format(dtrp, "0.0")   '2012.0830
+'            gemgmsg = gemgmsg + "r_pres" + Format(sumdt1, "0.0")   '2012.0830 10回平均へ
+'            iFlg_hijyou = 6       '  非常停止 r_pres 1ton越え
+''        End If
+'    End If
    sumdt10 = sumdt10 + sumdt1
 '
-'    DoEvents                 ' 2006.5.14 forの外へ移動　s.f  ものすごく効く
-    'sumdt = sumdt + (dt(2) - 2.07667) * 223.8   '荷重 66kgで校正
-'    sumdt = sumdt + dt(2) * 50#   'D/Aフルスケール変更02.7.31(10V for 500kgf)
-    'sumdt = sumdt + dt(2) * 40  'D/Aフルスケール変更02.6.20(10V for 400kgf)
+'
   Next l
   r_pres = sumdt10 / 10# - r_pres_kousei   '平均   ０次の項は、各機械で数値をみて決める（robo内のデータ）
+    If r_pres > 1000# Then
+            gemgmsg = gemgmsg + "r_pres" + Format(sumdt1, "0.0")   '2012.0830 10回平均へ
+            iFlg_hijyou = 6       '  非常停止 r_pres 1ton越え
+    End If
 End Function
 
 Public Sub s_drive(az!, v!)
@@ -148,8 +150,8 @@ Dim azd As Double
 '--------------- 到達パルス演算
   sn = 1
 '  azd = -az          ' 何故だか解らないが　「－」で正常動作　　2005.11.22　ｓ.ｆ.
-'  azd = -az * gDirect  ' 2008.5.  NQD立ち上げで　再度ｃｏｍｐcounter機能しない。　符号の問題！！　ｓ.ｆ. gVelDirect=-1だから下記でOK
-  azd = az            ' 2008.9.15 NQD-2 立ち上げで　再度ｃｏｍｐcounter機能しない。　パルス数の符号は　TBK&TEとも　正　が正しい！
+'  azd = -az * gDirect        ' 2008.5.  NQD立ち上げで　再度ｃｏｍｐcounter機能しない。　符号の問題！！　ｓ.ｆ.
+  azd = az            ' 2008.9.15 NQD-2 立ち上げで　再度ｃｏｍｐcounter機能しない。　パルス数の符号は　正　が正しい！
   k_puls = azd * gRev2Disp + ddc05
 '  idt1 = Int(k_puls * sn / idc65536)　　　　　　　　　　　　’　2005.11.22　　MPL_IWCounter　コマンドへ書替え
 '  idt2 = Int((k_puls * sn - idt1 * idc65536) / idc256)
@@ -196,31 +198,18 @@ Dim pa!, per!       '/* float（単精度浮動小数点型)*/
 
 '/* ＰＩＤ演算 */               ’　perの値の大きさは　加圧制御の細かさ
   ppos = ppos + "1"
-'////////////////////////////////////////////////////////////////////
-'   TBK/TE
-'   /TBK/   ///////////
-  per = 2 * 5 * (m_sa - pa) * Abs(m_sa - pa) / (m_p * m_p)  ' 2008.4.14 NQD　speed調整
-'//////////////////////////////////////////////////////////////////////
-'   /TE/    //////////
-'  per = 5 * (m_sa - pa) * Abs(m_sa - pa) / (m_p * m_p) ' 2008.4.14 NQD　speed調整
-'////////////////////////////////////////////////////////////////////////
+'  per = 2 * 5 * (m_sa - pa) * Abs(m_sa - pa) / (m_p1 * m_p1)  ' 2008.4.14 NQD　speed調整
+  per = 5 * (m_sa - pa) * Abs(m_sa - pa) / (m_p * m_p) ' 2008.4.14 NQD　speed調整
   If per > m_lim Then per = m_lim
   If per < (-1# * m_lim) Then per = -1# * m_lim     ' 2006.5.23 #追加
 '
 '  per = per * gDirect     'S.Mの回転方向 (+1 or -1)      ' 2008.3 NQD1-tsubaki
   per = -per               'S.Mの回転方向 (+1 or -1)      ' 2008.9.12 NQD2 -touei
-'                          '20141.11  TBK&TE共　pre=-per　で正しい。TBK時はgDirect=-1のため
 '
   'nout = Int(40.95 * per) + &H800
   ppos = ppos + "2"
-'////////////////////////////////////////////////////////////////////
-'   TBK/TE
-'   /TBK/
-  nout = &H800 - Int(40.95 * per)          '  0803    tsubaki
-'////////////////////////////////////////////////////////////////////
-'   /TE/
-'  nout = &H800 - Int(4.095 * per / 4#)      '  080912  touei
-'////////////////////////////////////////////////////////////////////
+  nout = &H800 - Int(4.095 * per / 4#)      '  080912  touei
+'  nout = &H800 - Int(40.95 * per)          '  0803    tsubaki
   ch = 1
 '  v = 10# * (Int(4.095 * per / 4#) / 2048#)   ' 2005.11.26
   ppos = ppos + "3"

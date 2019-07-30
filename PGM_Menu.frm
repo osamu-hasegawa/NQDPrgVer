@@ -3,22 +3,22 @@ Begin VB.Form PGM_Menu
    AutoRedraw      =   -1  'True
    BackColor       =   &H00E0E0E0&
    Caption         =   "メニュー"
-   ClientHeight    =   6405
-   ClientLeft      =   45
-   ClientTop       =   345
-   ClientWidth     =   8310
+   ClientHeight    =   6408
+   ClientLeft      =   48
+   ClientTop       =   348
+   ClientWidth     =   8304
    ControlBox      =   0   'False
    FillColor       =   &H00C0C0C0&
    ForeColor       =   &H00800000&
    LinkTopic       =   "Form1"
-   ScaleHeight     =   6405
-   ScaleWidth      =   8310
+   ScaleHeight     =   6408
+   ScaleWidth      =   8304
    StartUpPosition =   3  'Windows の既定値
    Begin VB.CommandButton Command2 
       Caption         =   "Comment"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   7.5
+         Size            =   7.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -69,7 +69,7 @@ Begin VB.Form PGM_Menu
       Caption         =   "水冷却"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   9.75
+         Size            =   9.6
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -159,7 +159,7 @@ Begin VB.Form PGM_Menu
       Caption         =   "搬送開始"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -178,7 +178,7 @@ Begin VB.Form PGM_Menu
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -215,7 +215,7 @@ Begin VB.Form PGM_Menu
       Caption         =   "G  原点出し実行"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   11.25
+         Size            =   11.4
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -256,7 +256,7 @@ Begin VB.Form PGM_Menu
       Caption         =   "終了"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -274,7 +274,7 @@ Begin VB.Form PGM_Menu
       Caption         =   "edit"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -292,7 +292,7 @@ Begin VB.Form PGM_Menu
       Caption         =   "メモ帳"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -310,7 +310,7 @@ Begin VB.Form PGM_Menu
       Caption         =   "読出し"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   10.5
+         Size            =   10.8
          Charset         =   128
          Weight          =   700
          Underline       =   0   'False
@@ -402,7 +402,7 @@ Begin VB.Form PGM_Menu
    End
    Begin VB.Label Label1 
       BackColor       =   &H00E0E0E0&
-      Caption         =   "NQD-71_Ver140117"
+      Caption         =   "NQD-71_Ver190427a"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
          Size            =   12
@@ -571,7 +571,7 @@ Begin VB.Form PGM_Menu
       Caption         =   "Label2"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
-         Size            =   14.25
+         Size            =   14.4
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -839,7 +839,7 @@ Begin VB.Form PGM_Menu
       Caption         =   "Precision Glass Mold System"
       BeginProperty Font 
          Name            =   "ＭＳ ゴシック"
-         Size            =   19.5
+         Size            =   19.8
          Charset         =   128
          Weight          =   400
          Underline       =   0   'False
@@ -1028,6 +1028,12 @@ Attribute VB_Exposed = False
 '　　　 Ver.NQD_71_130426  2013. 4.26.s.f.  bug修正
 '　　　 Ver.NQD_71_140111  2014. 1.11.s.f.  TBK&TE統合版　　　　　　　全部で７カ所
 '　　　 Ver.NQD_71_140117  2014. 1.17.s.f.  TBK&TE統合版, Bug 修正　　全部で９カ所
+'　　　 Ver.NQD_71_140117  2014.10.09.s.f.  1Ton越　ノイズ対策　１０回ｘ１０回
+'　　　 Ver.NQD_71_180216  2018. 2.16.s.f.  130426,140117,141009　& DataSave機能追加　最終統合版　これ一つでOK
+'　　　 Ver.NQD_71_180217b 2018. 2.17.s.f. 　表示部　見栄え変更
+'　　　 Ver.NQD_71_180901  2018. 9. 1.s.f. 　130426SP7も繰り入れ
+'　　　 Ver.NQD_71_190427  2019. 4.27.s.f. 　金型成形ショット数カウンター追加、DataSave機能変更（２周分データ取り）
+'                                            DataSaveのファイル　csv形式へ変更
 '
 '///////////////////////////////////////////////////////
 '　　　TBK&TE　統合　　　Keyword=TBK/TE　　　 9箇所  Menu,KTD, My_lib, FbiDio, MplBDef,
@@ -1035,7 +1041,6 @@ Attribute VB_Exposed = False
 '******************************************************************************
 Option Explicit
 '
-'Dim pv_ch!        '/* マニュアル時の速度／位置切り換え値*/
 Dim di_d2%         '/* DIO_P　2ﾎﾟｰﾄ　ﾊﾞｯﾌｧ */
 '
 Dim OrgFlg%         '原点出し
@@ -1046,7 +1051,6 @@ Dim TrnsCnt%        '搬送カウンタ
 Dim lTrnsFLg%       '搬送中フラグ
 Dim lK1%            '回数カウンタ
 Dim lwcoolFLg%, lwcoolcunt As Integer
-
 
 Private Sub Command1_Click(Index As Integer)
 Select Case Index
@@ -1092,7 +1096,7 @@ End Sub
 
 Private Sub Command2_Click(Index As Integer)
 '
-  'FrmMenuFlg = False                    'メニューから抜けるときfalse
+  'FrmMenuFlg = False                 'メニューから抜けるときfalse
   '
   Select Case Index
   Case 0    '真空到達
@@ -1111,11 +1115,11 @@ Private Sub Command2_Click(Index As Integer)
       PltPrns TrnsMax
     End If
   Case 2  'comment記入
-    FrmMenuFlg = False                    'メニューから抜けるときfalse
-    NextView = 9                           '
+    FrmMenuFlg = False                  'メニューから抜けるときfalse
+    NextView = 9                     '
   Case 3  '読み出し
-    FrmMenuFlg = False                    'メニューから抜けるときfalse
-    NextView = 6                           '
+    FrmMenuFlg = False                  'メニューから抜けるときfalse
+    NextView = 6                     '
     'coxFlLoad
     'Label2(2) = gcoxFlName
     'cfileSave

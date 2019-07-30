@@ -23,6 +23,69 @@ Begin VB.Form MYEdit
    ScaleHeight     =   7404
    ScaleWidth      =   10452
    StartUpPosition =   3  'Windows ÇÃä˘íËíl
+   Begin VB.TextBox Text17 
+      Height          =   252
+      Index           =   6
+      Left            =   3960
+      TabIndex        =   286
+      Text            =   "Text17"
+      Top             =   4040
+      Width           =   372
+   End
+   Begin VB.TextBox Text17 
+      Height          =   252
+      Index           =   5
+      Left            =   3480
+      TabIndex        =   285
+      Text            =   "Text17"
+      Top             =   4040
+      Width           =   372
+   End
+   Begin VB.TextBox Text17 
+      Height          =   252
+      Index           =   4
+      Left            =   2900
+      TabIndex        =   284
+      Text            =   "Text17"
+      Top             =   4040
+      Width           =   372
+   End
+   Begin VB.TextBox Text17 
+      Height          =   252
+      Index           =   3
+      Left            =   2450
+      TabIndex        =   283
+      Text            =   "Text17"
+      Top             =   4040
+      Width           =   372
+   End
+   Begin VB.TextBox Text17 
+      Height          =   252
+      Index           =   2
+      Left            =   1970
+      TabIndex        =   282
+      Text            =   "Text17"
+      Top             =   4040
+      Width           =   372
+   End
+   Begin VB.TextBox Text17 
+      Height          =   252
+      Index           =   1
+      Left            =   1500
+      TabIndex        =   281
+      Text            =   "Text17"
+      Top             =   4040
+      Width           =   372
+   End
+   Begin VB.TextBox Text17 
+      Height          =   252
+      Index           =   0
+      Left            =   1050
+      TabIndex        =   280
+      Text            =   "Text17"
+      Top             =   4040
+      Width           =   372
+   End
    Begin VB.CommandButton Command2 
       Caption         =   "Comment"
       Height          =   300
@@ -55,7 +118,7 @@ Begin VB.Form MYEdit
       Enabled         =   0   'False
       Height          =   252
       Index           =   9
-      Left            =   5040
+      Left            =   6120
       TabIndex        =   277
       Text            =   "Text14"
       Top             =   4080
@@ -384,20 +447,20 @@ Begin VB.Form MYEdit
    Begin VB.TextBox Text14 
       Height          =   252
       Index           =   8
-      Left            =   4840
+      Left            =   5760
       TabIndex        =   242
       Text            =   "Text14"
-      Top             =   3840
+      Top             =   4080
       Visible         =   0   'False
       Width           =   372
    End
    Begin VB.TextBox Text14 
       Height          =   252
       Index           =   7
-      Left            =   4400
+      Left            =   5400
       TabIndex        =   241
       Text            =   "Text14"
-      Top             =   3840
+      Top             =   4080
       Visible         =   0   'False
       Width           =   372
    End
@@ -407,7 +470,7 @@ Begin VB.Form MYEdit
       Left            =   3960
       TabIndex        =   240
       Text            =   "Text14"
-      Top             =   3840
+      Top             =   3800
       Width           =   372
    End
    Begin VB.TextBox Text14 
@@ -416,7 +479,7 @@ Begin VB.Form MYEdit
       Left            =   3480
       TabIndex        =   239
       Text            =   "Text14"
-      Top             =   3840
+      Top             =   3800
       Width           =   372
    End
    Begin VB.TextBox Text14 
@@ -425,7 +488,7 @@ Begin VB.Form MYEdit
       Left            =   2900
       TabIndex        =   238
       Text            =   "Text14"
-      Top             =   3840
+      Top             =   3800
       Width           =   372
    End
    Begin VB.TextBox Text14 
@@ -434,7 +497,7 @@ Begin VB.Form MYEdit
       Left            =   2450
       TabIndex        =   237
       Text            =   "Text14"
-      Top             =   3840
+      Top             =   3800
       Width           =   372
    End
    Begin VB.TextBox Text14 
@@ -443,7 +506,7 @@ Begin VB.Form MYEdit
       Left            =   1970
       TabIndex        =   236
       Text            =   "Text14"
-      Top             =   3840
+      Top             =   3800
       Width           =   372
    End
    Begin VB.TextBox Text14 
@@ -452,7 +515,7 @@ Begin VB.Form MYEdit
       Left            =   1500
       TabIndex        =   235
       Text            =   "Text14"
-      Top             =   3840
+      Top             =   3800
       Width           =   372
    End
    Begin VB.TextBox Text14 
@@ -461,7 +524,7 @@ Begin VB.Form MYEdit
       Left            =   1050
       TabIndex        =   234
       Text            =   "Text14"
-      Top             =   3840
+      Top             =   3800
       Width           =   372
    End
    Begin VB.TextBox Text9 
@@ -2891,6 +2954,17 @@ Begin VB.Form MYEdit
       Top             =   90
       Width           =   1150
    End
+   Begin VB.Label Label9 
+      Alignment       =   2  'íÜâõëµÇ¶
+      BackStyle       =   0  'ìßñæ
+      Caption         =   "ºÆØƒêî"
+      Height          =   168
+      Index           =   1
+      Left            =   500
+      TabIndex        =   287
+      Top             =   4040
+      Width           =   576
+   End
    Begin VB.Label Label11 
       Alignment       =   2  'íÜâõëµÇ¶
       BackColor       =   &H00C0E0FF&
@@ -3033,12 +3107,14 @@ Begin VB.Form MYEdit
    End
    Begin VB.Label Label9 
       Alignment       =   2  'íÜâõëµÇ¶
+      BackStyle       =   0  'ìßñæ
       Caption         =   "å^No."
-      Height          =   255
-      Left            =   360
+      Height          =   170
+      Index           =   0
+      Left            =   500
       TabIndex        =   243
       Top             =   3840
-      Width           =   615
+      Width           =   580
    End
    Begin VB.Label Label5 
       Alignment       =   2  'íÜâõëµÇ¶
@@ -3249,7 +3325,7 @@ Begin VB.Form MYEdit
       ForeColor       =   &H00C00000&
       Height          =   156
       Index           =   0
-      Left            =   276
+      Left            =   240
       TabIndex        =   190
       Top             =   4200
       Width           =   336
@@ -4375,12 +4451,12 @@ Dim aHenkou$(3)
 Private Sub Command1_Click()
   If katCflag = True Then
           katCflag = False          'â¡à≥éûä‘é©ìÆêßå‰Å@OFF
-          Command1().BackColor = CmndColoff(3)
-          Command1().Caption = "â¡à≥éûä‘êßå‰ OFF"
+          command1().BackColor = CmndColoff(3)
+          command1().Caption = "â¡à≥éûä‘êßå‰ OFF"
     Else
           katCflag = True      'â¡à≥éûä‘é©ìÆêßå‰Å@ON
-          Command1().BackColor = CmndColon(1)    ' on1=red
-          Command1().Caption = "â¡à≥éûä‘êßå‰ ON"
+          command1().BackColor = CmndColon(1)    ' on1=red
+          command1().Caption = "â¡à≥éûä‘êßå‰ ON"
   End If
 '
 End Sub
@@ -4626,7 +4702,12 @@ Dim dt!
     For i = 0 To 9
         Text14(i).Text = kataNo(i)
     Next i
-   dt = kataNo(10): DispText14 1, dt, True   'ïœNo. í≤êÆêî
+   dt = kataNo(10): DispText14 1, dt, True   'å^No. í≤êÆêî
+' ---- kata Shotêî ï\é¶
+    For i = 0 To 6                  ' Text17 ÇÕÅA0Å`6Å@Ç‹Ç≈
+        Text17(i).Text = ShotSu(i)
+    Next i
+   
   '------------------ ÉOÉâÉt
   MyEditGph Me.Picture1
 End Sub
@@ -4716,7 +4797,12 @@ Dim dt!
 '
 '  --- kataNo. ---
     For i = 0 To 10
-        kataNo(i) = Text14(i).Text  '   å^No.Å@ÇÃéÊÇËçûÇ›
+        kataNo(i) = Text14(i).Text  '   å^No.Å@ÇÃéÊçûÇ›
+    Next i
+'
+'  --- kata Shotêî ---
+    For i = 0 To 6                  'Å@Text7ÇÕ0Å`6Ç‹Ç≈
+        ShotSu(i) = Val(Text17(i).Text)  '   å^ ShotêîÇÃéÊçûÇ›
     Next i
 '
 End Sub
@@ -4760,11 +4846,11 @@ DispCenter Me
     End If
   Next i
   If katCflag = False Then
-          Command1().BackColor = CmndColoff(3)
-          Command1().Caption = "â¡à≥éûä‘êßå‰ OFF"
+          command1().BackColor = CmndColoff(3)
+          command1().Caption = "â¡à≥éûä‘êßå‰ OFF"
     Else
-          Command1().BackColor = CmndColon(1)    ' on1=red
-          Command1().Caption = "â¡à≥éûä‘êßå‰ ON"
+          command1().BackColor = CmndColon(1)    ' on1=red
+          command1().Caption = "â¡à≥éûä‘êßå‰ ON"
     End If
 End Sub
 

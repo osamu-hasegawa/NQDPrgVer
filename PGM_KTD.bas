@@ -71,11 +71,11 @@ Global ViewFlg%                         '画面番号
 '/////////////////////////////////////
 '      TBK/TE
 ' /TBK/'  ////////
-Global Const gDirect! = -1            'S.Mの回転方向 (+1 or -1)'08.3.24 tsubaki
-Global Const gRev2Disp As Double = 8000  '1回転あたりのパルス数 KD2002ED(ﾂﾊﾞｷ)モーター  2000*4=8000
+'Global Const gDirect! = -1            'S.Mの回転方向 (+1 or -1)'08.3.24 tsubaki
+'Global Const gRev2Disp As Double = 8000  '1回転あたりのパルス数 KD2002ED(ﾂﾊﾞｷ)モーター  2000*4=8000
 ' /TE/'  //////////
-'Global Const gDirect! = 1            'S.Mの回転方向 (+1 or -1)  '08.09.10東栄
-'Global Const gRev2Disp As Double = 24000   '1回転あたりのパルス数 東栄サーボモーター　レゾルバ 24000Pulse/rev.  昔のLS機
+Global Const gDirect! = 1            'S.Mの回転方向 (+1 or -1)  '08.09.10東栄
+Global Const gRev2Disp As Double = 24000   '1回転あたりのパルス数 東栄サーボモーター　レゾルバ 24000Pulse/rev.  昔のLS機
 '//////////////////////////////////////////////////////////////////
 Global gTimeUpCnt%                      'タイムアップのカウンタ
 Global gVumFlg%                         '真空到達=1
@@ -158,7 +158,10 @@ Global kataNo$(0 To 10)                 ' 型のナンバー　　　'2007.11.12　tsuika
 Global kataNoHyj$(0 To 36)                    ' 型Ｎｏ．　表示用リングバッファ
 Global kataNoPnt As Integer                     '　型No.　ポインター
 Global katamax                          ' 成形機内の　ステーション数
+Global ShotSu%(0 To 10)                 ' 型shot数　　20190427追加
+Global ikn%                             ' 成形中の型Noの配列変数No　　kataNo(ikn)
 '--------------- [QD61]LS21_S.C で定義してある変数
+Global KeikaTime%(0 To 12000)
 Global atemp!(0 To 12000, 0 To 2)    '1801 →12000　へ変更　130425
 Global aposi!(0 To 12000)   '1801 →12000　へ変更　130425
 Global apre!(0 To 12000)   '1801 →12000　へ変更　130425
@@ -198,7 +201,7 @@ Dim i%
   Saikaiflg = False         'プログラム開始時は、一旦false
   katamax = 6           ' STATION SSU = 6
   ishu = 1              ' 1週目から　スタート
-
+  KeikaTime(0) = 1
 '
     For i = 0 To 9
         kataNo(i) = Format(i + 1, "##")     ' 型Ｎｏ．の初期化
@@ -401,7 +404,15 @@ Dim lsub As Long
     l = l + 1
     dt = "  " & kataNo(0)
     For i = 1 To 8
-        dt = dt + "  " & kataNo(i)
+        dt = dt + ",  " & kataNo(i)
+    Next i
+    gCoxDlDt(l) = dt
+ '　　　　　　　　　　　　　　　　　　　'　型Shot数　読込み
+    Input #fnum, ShotSu(0), ShotSu(1), ShotSu(2), ShotSu(3), ShotSu(4), ShotSu(5), ShotSu(6), ShotSu(7), ShotSu(8)
+    l = l + 1
+    dt = "  " & Format(ShotSu(0), "0")
+    For i = 1 To 8
+        dt = dt + ",  " & Format(ShotSu(i), "0")
     Next i
     gCoxDlDt(l) = dt
  '
@@ -458,11 +469,10 @@ Dim j%, fnum%, sdt$
 Dim fDir$, flNm$
   fnum = FreeFile
   fDir = App.path & "\..\data\"
-'  FlNmRecDt = "LS" & Mid(Date, 6, 2) & Mid(Date, 9, 2) & Mid(Time, 1, 2) & Mid(Time, 4, 2) & Format(Int(icnt), "0") & ".lsl"
-  FlNmRecDt = "LS" & Format$(Now, "yymmddhhmmss") & Format(Int(icnt), "0") & ".lsl"
-  sdt = " No.     Z3         ct1    ct2"
-  sdt = sdt & "      cc1     cc2    cc3"
-  sdt = sdt & "    cc3-2     cp         ﾀｸﾄ     T係数    Z3補正"
+  FlNmRecDt = "LS" & Format$(Now, "yymmddhhmmss") & ".lsl"
+  sdt = " No, , , 型No,ｼｮｯﾄ数, Z3, ct1, ct2"
+  sdt = sdt & ",    cc1,  cc2,  cc3"
+  sdt = sdt & ",  cc3-2,   cp,    ﾀｸﾄ, T係数, Z3補正"
   Open fDir & FlNmRecDt For Output As #fnum
      Write #fnum, gcoxFlName & "   " & Date$ & "   " & Time$
      Write #fnum, sdt
@@ -502,19 +512,18 @@ Dim fDir$, emgmsg$, flNm$
      Write #fnum, "  " & sdt3 & ppos
   Close #fnum
 End Sub
-
 Public Sub ResDtSave(i_s%, i%)
 Dim j%, fnum%
 Dim fDir$, flNm$
   fnum = FreeFile
   fDir = App.path & "\..\data\"
-  flNm = Mid(Date, 4, 2) & Mid(Date, 7, 2) & Trim(Str(i_s)) & "d.mpr"
+  flNm = Format$(Now, "yymmddhhmmss") & "-" & kataNo(ikn) & ".mpr"
   Open fDir & flNm For Output As #fnum
-  Write #fnum, Date
+  Write #fnum, Date, gcoxFlName, kataNo(ikn)
   Write #fnum, Time
   Write #fnum, i
   For j = 0 To i
-    Write #fnum, atemp(j, 0), atemp(j, 1), atemp(j, 2), apre(j), aposi(j)
+    Write #fnum, Format(Int(KeikaTime(j) / 60), "  0分") & Format(Int(KeikaTime(j)) Mod 60, " 0秒"), atemp(j, 0), atemp(j, 1), atemp(j, 2), apre(j), aposi(j)
   Next j
   Close #fnum
 End Sub
@@ -660,6 +669,14 @@ Dim lsub As Long
     dt = "  " & kataNo(0)
     For i = 1 To 8
         dt = dt + ",  " & kataNo(i)
+    Next i
+    gCoxDlDt(l) = dt
+'
+  '  型 Shot数データ　の書き込み
+    l = l + 1     ' 改行
+    dt = "  " & Format(ShotSu(0), "0")
+    For i = 1 To 8
+        dt = dt + ",  " & Format(ShotSu(i), "0")
     Next i
     gCoxDlDt(l) = dt
 '

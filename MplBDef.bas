@@ -123,10 +123,10 @@ Public Sub Ccw_Index(Mel As Object)
 '   TBK/TE
 '/////////////////////////////////////////////////////
 '   /TBK/
-   Call MplDataSet(-gRev2Disp * 2, MplData)    '‚h‚m‚b‚q‚d‚l‚d‚m‚s‚`‚k ‚h‚m‚c‚d‚w ‚c‚q‚h‚u‚d ‚b‚n‚l‚l‚`‚m‚c
+'   Call MplDataSet(-gRev2Disp * 2, MplData)    '‚h‚m‚b‚q‚d‚l‚d‚m‚s‚`‚k ‚h‚m‚c‚d‚w ‚c‚q‚h‚u‚d ‚b‚n‚l‚l‚`‚m‚c
 '/////////////////////////////////////////////////////////
 '   /TE/
-'   Call MplDataSet(-gRev2Disp, MplData)      ' 1‰ñ“]‚Ìƒpƒ‹ƒX”set           '‚h‚m‚b‚q‚d‚l‚d‚m‚s‚`‚k ‚h‚m‚c‚d‚w ‚c‚q‚h‚u‚d ‚b‚n‚l‚l‚`‚m‚c ' 080910 "*2" sakujyo
+   Call MplDataSet(-gRev2Disp, MplData)      ' 1‰ñ“]‚Ìƒpƒ‹ƒX”set           '‚h‚m‚b‚q‚d‚l‚d‚m‚s‚`‚k ‚h‚m‚c‚d‚w ‚c‚q‚h‚u‚d ‚b‚n‚l‚l‚`‚m‚c ' 080910 "*2" sakujyo
 '////////////////////////////////////////////////////////////////////////
    Ack = MPL_IWDrive(hDev, &H14, MplData, MplResult)
    'Call Ready_Wait
@@ -144,10 +144,10 @@ Public Sub Cw_Index(Mel As Object)
 '  TBK/TE
 '////////////////////////////////////////////////////////
 '  /TBK/
-   Call MplDataSet(gRev2Disp * 2, MplData)     ' 1‰ñ“]‚Ìƒpƒ‹ƒX”set       '‚h‚m‚b‚q‚d‚l‚d‚m‚s‚`‚k ‚h‚m‚c‚d‚w ‚c‚q‚h‚u‚d ‚b‚n‚l‚l‚`‚m‚c
+'   Call MplDataSet(gRev2Disp * 2, MplData)     ' 1‰ñ“]‚Ìƒpƒ‹ƒX”set       '‚h‚m‚b‚q‚d‚l‚d‚m‚s‚`‚k ‚h‚m‚c‚d‚w ‚c‚q‚h‚u‚d ‚b‚n‚l‚l‚`‚m‚c
 '////////////////////////////////////////////////////////
 '  /TE/
-'   Call MplDataSet(gRev2Disp, MplData)       ' 1‰ñ“]‚Ìƒpƒ‹ƒX”set       '‚h‚m‚b‚q‚d‚l‚d‚m‚s‚`‚k ‚h‚m‚c‚d‚w ‚c‚q‚h‚u‚d ‚b‚n‚l‚l‚`‚m‚c
+   Call MplDataSet(gRev2Disp, MplData)       ' 1‰ñ“]‚Ìƒpƒ‹ƒX”set       '‚h‚m‚b‚q‚d‚l‚d‚m‚s‚`‚k ‚h‚m‚c‚d‚w ‚c‚q‚h‚u‚d ‚b‚n‚l‚l‚`‚m‚c
 '////////////////////////////////////////////////////////
    Ack = MPL_IWDrive(hDev, &H14, MplData, MplResult)
    'Call Ready_Wait
@@ -355,14 +355,14 @@ Dim i%, Data%, Cmd%
 '   TBK/TE
 '///////////////////////////////////////////////
 '   /TBK/
-  Data = 0: Ack = MPL_BWDriveData1(hDev, Data, MplResult)   'outp(AX_DT1,0);
-  Data = 71: Ack = MPL_BWDriveData2(hDev, Data, MplResult)   'outp(AX_DT2,141);
-  Data = 160: Ack = MPL_BWDriveData3(hDev, Data, MplResult)   'outp(AX_DT3,160);   /* 36256 pps  2mm/sec */
+'  Data = 0: Ack = MPL_BWDriveData1(hDev, Data, MplResult)   'outp(AX_DT1,0);
+'  Data = 71: Ack = MPL_BWDriveData2(hDev, Data, MplResult)   'outp(AX_DT2,141);
+'  Data = 160: Ack = MPL_BWDriveData3(hDev, Data, MplResult)   'outp(AX_DT3,160);   /* 36256 pps  2mm/sec */
 '//////////////////////////////////////////////////////////////
 '   /TE/
-'  Data = 0: Ack = MPL_BWDriveData1(hDev, Data, MplResult)   'outp(AX_DT1,0);
-'  Data = 141: Ack = MPL_BWDriveData2(hDev, Data, MplResult)   'outp(AX_DT2,141);
-'  Data = 160: Ack = MPL_BWDriveData3(hDev, Data, MplResult)   'outp(AX_DT3,160);   /* 36256 pps  2mm/sec */
+  Data = 0: Ack = MPL_BWDriveData1(hDev, Data, MplResult)   'outp(AX_DT1,0);
+  Data = 141: Ack = MPL_BWDriveData2(hDev, Data, MplResult)   'outp(AX_DT2,141);
+  Data = 160: Ack = MPL_BWDriveData3(hDev, Data, MplResult)   'outp(AX_DT3,160);   /* 36256 pps  2mm/sec */
 '//////////////////////////////////////////////////////////////
   Cmd = &H8: Ack = MPL_BWDriveCommand(hDev, Cmd, MplResult)   '/* HSPD set command */
 
@@ -371,14 +371,14 @@ Dim i%, Data%, Cmd%
 '   TBK/TE
 '////////////////////////////////////////////////////////////
 '   /TBK/
-  Data = 0: Ack = MPL_BWDriveData1(hDev, Data, MplResult)   'outp(AX_DT1,0);
-  Data = 8: Ack = MPL_BWDriveData2(hDev, Data, MplResult)   'outp(AX_DT2,17);
-  Data = 180: Ack = MPL_BWDriveData3(hDev, Data, MplResult)   'outp(AX_DT3,180);   /* 4532 pps 0.25mm/sec */
+'  Data = 0: Ack = MPL_BWDriveData1(hDev, Data, MplResult)   'outp(AX_DT1,0);
+'  Data = 8: Ack = MPL_BWDriveData2(hDev, Data, MplResult)   'outp(AX_DT2,17);
+'  Data = 180: Ack = MPL_BWDriveData3(hDev, Data, MplResult)   'outp(AX_DT3,180);   /* 4532 pps 0.25mm/sec */
 '////////////////////////////////////////////////////////////
 '  /TE/
-'  Data = 0: Ack = MPL_BWDriveData1(hDev, Data, MplResult)   'outp(AX_DT1,0);
-'  Data = 17: Ack = MPL_BWDriveData2(hDev, Data, MplResult)   'outp(AX_DT2,17);
-'  Data = 180: Ack = MPL_BWDriveData3(hDev, Data, MplResult)   'outp(AX_DT3,180);   /* 4532 pps 0.25mm/sec */
+  Data = 0: Ack = MPL_BWDriveData1(hDev, Data, MplResult)   'outp(AX_DT1,0);
+  Data = 17: Ack = MPL_BWDriveData2(hDev, Data, MplResult)   'outp(AX_DT2,17);
+  Data = 180: Ack = MPL_BWDriveData3(hDev, Data, MplResult)   'outp(AX_DT3,180);   /* 4532 pps 0.25mm/sec */
 '/////////////////////////////////////////////////////////////////////
   Cmd = &H1A: Ack = MPL_BWDriveCommand(hDev, Cmd, MplResult)  '/* CSPD set command */
 
