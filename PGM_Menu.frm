@@ -402,7 +402,7 @@ Begin VB.Form PGM_Menu
    End
    Begin VB.Label Label1 
       BackColor       =   &H00E0E0E0&
-      Caption         =   "NQD-71_Ver190427a"
+      Caption         =   "NQD-71_Ver190427b"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
          Size            =   12
@@ -1035,9 +1035,10 @@ Attribute VB_Exposed = False
 '　　　 Ver.NQD_71_190427  2019. 4.27.s.f. 　金型成形ショット数カウンター追加、DataSave機能変更（２周分データ取り）
 '                                            DataSaveのファイル　csv形式へ変更
 '　　　 Ver.NQD_71_190427a 2019. 4.28.s.f. 　KeikaTime バグ修正
+'　　　 Ver.NQD_71_190427b 2019. 5. 7.s.f. 　TE/TBK統合化ばぐ修正　　MyLib　２箇所変更追加
 '
 '///////////////////////////////////////////////////////
-'　　　TBK&TE　統合　　　Keyword=TBK/TE　　　 9箇所  Menu,KTD, My_lib, FbiDio, MplBDef,
+'　　　TBK&TE　統合　　　Keyword=TBK/TE　　　 11箇所  Menu,KTD,FbiDio,MplBDef,MyLib
 '///////////////////////////////////////////////////////
 '******************************************************************************
 Option Explicit
