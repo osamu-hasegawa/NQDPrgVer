@@ -71,13 +71,13 @@ Global ViewFlg%                         '画面番号
 '/////////////////////////////////////
 '      TBK/TE
 ' /TBK/'  ////////
-'Global Const tbkte$ = "tbk"
-'Global Const gDirect! = -1            'S.Mの回転方向 (+1 or -1)'08.3.24 tsubaki
-'Global Const gRev2Disp As Double = 8000  '1回転あたりのパルス数 KD2002ED(ﾂﾊﾞｷ)モーター  2000*4=8000
+Global Const tbkte$ = "tbk"
+Global Const gDirect! = -1            'S.Mの回転方向 (+1 or -1)'08.3.24 tsubaki
+Global Const gRev2Disp As Double = 8000  '1回転あたりのパルス数 KD2002ED(ﾂﾊﾞｷ)モーター  2000*4=8000
 ' /TE/'  //////////
-Global Const tbkte$ = "te"
-Global Const gDirect! = 1            'S.Mの回転方向 (+1 or -1)  '08.09.10東栄
-Global Const gRev2Disp As Double = 24000   '1回転あたりのパルス数 東栄サーボモーター　レゾルバ 24000Pulse/rev.  昔のLS機
+'Global Const tbkte$ = "te"
+'Global Const gDirect! = 1            'S.Mの回転方向 (+1 or -1)  '08.09.10東栄
+'Global Const gRev2Disp As Double = 24000   '1回転あたりのパルス数 東栄サーボモーター　レゾルバ 24000Pulse/rev.  昔のLS機
 '//////////////////////////////////////////////////////////////////
 Global gTimeUpCnt%                      'タイムアップのカウンタ
 Global gVumFlg%                         '真空到達=1

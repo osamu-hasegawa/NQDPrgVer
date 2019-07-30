@@ -402,7 +402,7 @@ Begin VB.Form PGM_Menu
    End
    Begin VB.Label Label1 
       BackColor       =   &H00E0E0E0&
-      Caption         =   "NQD-71_Ver190427e"
+      Caption         =   "NQD-71_Ver190427e-tbk"
       BeginProperty Font 
          Name            =   "‚l‚r ‚oƒSƒVƒbƒN"
          Size            =   12
