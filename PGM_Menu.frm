@@ -402,7 +402,7 @@ Begin VB.Form PGM_Menu
    End
    Begin VB.Label Label1 
       BackColor       =   &H00E0E0E0&
-      Caption         =   "NQD-71_Ver190427ｃ"
+      Caption         =   "NQD-71_Ver190427d"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
          Size            =   12
@@ -1038,6 +1038,7 @@ Attribute VB_Exposed = False
 '　　　 Ver.NQD_71_190427b 2019. 5. 7.s.f. 　TE/TBK統合化ばぐ修正　　MyLib　２箇所変更追加
 '       Ver.NQD_71_190427c 2019. 5.11.s.f.   coxデータのＨＤへの書き出し（毎回)　2019.5.11追加
 '                                            型順表示位置(プログラムに実施タイミング変更。成形サイクルの開始時に移動
+'       Ver.NQD_71_190427d 2019. 5.20.s.f.   型順表示位置”XR"へ戻す。成形室型有りをshot数カウントアップ条件へ、型表示変数書き込みは、coxファイル読み込み後へ
 '
 '
 '///////////////////////////////////////////////////////

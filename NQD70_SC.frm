@@ -2904,7 +2904,7 @@ Dim dumlbl14$
   Label12(0).Visible = False
   Label12(1).Visible = False
   Label12(2).Visible = False
-  Command1.Visible = False
+  command1.Visible = False
   iflgSCopy = 0
 '
 '----------------------- 連続成形メインプログラム
@@ -2941,13 +2941,6 @@ Dim dumlbl14$
 '-------------------------------------------------------------------------------------
 st:             '  Loop　１　　（最外ループ）
   If ied = 2 Then GoTo st2:             '  この文　気になる！！　ied=2　は　無い！！　　editの時は、ied=1　　それ以外は、ied=0
-'  ---　2007.11.27　追加　kataNo表示  更新
-    For iii = 0 To katamax
-        kataNoHyj(iii) = kataNo(iii)
-        kataNoHyj(iii + katamax + 1) = kataNo(iii)
-        kataNoHyj(iii + (katamax + 1) * 2) = kataNo(iii)
-        kataNoHyj(iii + (katamax + 1) * 3) = kataNo(iii)
-    Next iii
 '
 '/*  制御ファイルのオープン */
   coxDtRead gcoxFldir & gcoxFlName
@@ -2983,6 +2976,17 @@ st:             '  Loop　１　　（最外ループ）
          Label7(0).BorderStyle = 0  '  枠なし
          Label7(1).BorderStyle = 0  '  枠なし
   End If
+'
+'  ---　2007.11.27　追加　kataNo表示  更新 2019.5.20 coxファイル読み込み後へ場所移動
+    For iii = 0 To katamax
+        kataNoHyj(iii) = kataNo(iii)
+        kataNoHyj(iii + katamax + 1) = kataNo(iii)
+        kataNoHyj(iii + (katamax + 1) * 2) = kataNo(iii)
+        kataNoHyj(iii + (katamax + 1) * 3) = kataNo(iii)
+    Next iii
+'
+'
+'
 ''/* 予備加熱温度設定 */
 '/* 軸駆動制御コマンドのファイルからの読み取り */
   i = 0
@@ -3213,21 +3217,6 @@ ejs1:       ' ----- Loop 3  （for Loop の　外側)　　-----------------
          Label7(1).BackColor = TKatBackCol(0)
     End If
 ''
-'               --- 型　No.の表示　一回送り　---
-                kataNoPnt = kataNoPnt + 1
-                If kataNoPnt > katamax Then kataNoPnt = 0
-'
-                For iii = katamax To 0 Step -1
-                    Label13(iii).Caption = kataNoHyj(katamax - iii + kataNoPnt + katamax + 1 + Val(kataNo(10)))
-                Next iii
-'
-                If (i_s_do) < katamax - 1 Then
-                    For iii = kataNoPnt + 1 To katamax
-                        Label13(iii).Caption = "空"
-                    Next iii
-                End If
-'
-' ---           型Ｎｏ．　１回送り完了
 '
 '/* カウンタへの出力ダウン */
     'InitDat(11) = InitDat(11) - 1   '成形カウンタトウタル
@@ -3671,7 +3660,7 @@ sj1:
                  Label12(0).Visible = True
                  Label12(1).Visible = True
                  Label12(2).Visible = True
-                 Command1.Visible = True
+                 command1.Visible = True
                  Label12(0).Caption = "保温停止中"
                  Label12(1).Caption = " 経過時間"
                   
@@ -3695,7 +3684,7 @@ sj1:
                  Label12(0).Visible = False
                  Label12(1).Visible = False
                  Label12(2).Visible = False
-                 Command1.Visible = False
+                 command1.Visible = False
                   iHoteikanryou = 1
                   iflg = 1
                   GoTo caselend2:
@@ -3991,7 +3980,23 @@ caselend:   iHoteikanryou = 1
                   DoEvents           '  注意　このDoEventsを　Do　直後に移すと　誤動作する。　搬送終了2回待ちになる！！
                 Loop
 '
-              Case "W"    '成形終了
+'               --- 型　No.の表示　一回送り　---
+                kataNoPnt = kataNoPnt + 1
+                If kataNoPnt > katamax Then kataNoPnt = 0
+'
+                For iii = katamax To 0 Step -1
+                    Label13(iii).Caption = kataNoHyj(katamax - iii + kataNoPnt + katamax + 1 + Val(kataNo(10)))
+                Next iii
+'
+                If (i_s_do) < katamax - 1 Then
+                    For iii = kataNoPnt + 1 To katamax
+                        Label13(iii).Caption = "空"
+                    Next iii
+                End If
+'
+' ---           型Ｎｏ．　１回送り完了
+'
+'              Case "W"    '成形終了
               End Select
           Case "E"    '/* 終了　ロボット搬送 */
              ppos = "SC Proc E"
@@ -4230,7 +4235,7 @@ send:
         Next iii
          
  '--- /* 　カウントアップ　---/*
-        If (kataNo(ikn) <> "") Then ShotSu(ikn) = ShotSu(ikn) + 1
+        If (kataNo(ikn) <> "" And idcflg(1) = 0) Then ShotSu(ikn) = ShotSu(ikn) + 1
         
  '--- /* 　shot数の画面グラフ内表示　---/*
         dumlbl14 = kataNo(0) & "=" & Format(ShotSu(0), "0") & "  " & kataNo(1) & "=" & Format(ShotSu(1), "0") & "  "
