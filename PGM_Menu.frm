@@ -1034,6 +1034,7 @@ Attribute VB_Exposed = False
 '　　　 Ver.NQD_71_180901  2018. 9. 1.s.f. 　130426SP7も繰り入れ
 '　　　 Ver.NQD_71_190427  2019. 4.27.s.f. 　金型成形ショット数カウンター追加、DataSave機能変更（２周分データ取り）
 '                                            DataSaveのファイル　csv形式へ変更
+'　　　 Ver.NQD_71_190427a 2019. 4.28.s.f. 　KeikaTime バグ修正
 '
 '///////////////////////////////////////////////////////
 '　　　TBK&TE　統合　　　Keyword=TBK/TE　　　 9箇所  Menu,KTD, My_lib, FbiDio, MplBDef,

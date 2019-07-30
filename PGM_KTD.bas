@@ -201,7 +201,7 @@ Dim i%
   Saikaiflg = False         'プログラム開始時は、一旦false
   katamax = 6           ' STATION SSU = 6
   ishu = 1              ' 1週目から　スタート
-  KeikaTime(0) = 1
+  KeikaTime(0) = 0
 '
     For i = 0 To 9
         kataNo(i) = Format(i + 1, "##")     ' 型Ｎｏ．の初期化
