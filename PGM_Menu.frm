@@ -402,7 +402,7 @@ Begin VB.Form PGM_Menu
    End
    Begin VB.Label Label1 
       BackColor       =   &H00E0E0E0&
-      Caption         =   "NQD-71_Ver190427b"
+      Caption         =   "NQD-71_Ver190427ｃ"
       BeginProperty Font 
          Name            =   "ＭＳ Ｐゴシック"
          Size            =   12
@@ -1036,6 +1036,9 @@ Attribute VB_Exposed = False
 '                                            DataSaveのファイル　csv形式へ変更
 '　　　 Ver.NQD_71_190427a 2019. 4.28.s.f. 　KeikaTime バグ修正
 '　　　 Ver.NQD_71_190427b 2019. 5. 7.s.f. 　TE/TBK統合化ばぐ修正　　MyLib　２箇所変更追加
+'       Ver.NQD_71_190427c 2019. 5.11.s.f.   coxデータのＨＤへの書き出し（毎回)　2019.5.11追加
+'                                            型順表示位置(プログラムに実施タイミング変更。成形サイクルの開始時に移動
+'
 '
 '///////////////////////////////////////////////////////
 '　　　TBK&TE　統合　　　Keyword=TBK/TE　　　 11箇所  Menu,KTD,FbiDio,MplBDef,MyLib

@@ -3213,6 +3213,22 @@ ejs1:       ' ----- Loop 3  （for Loop の　外側)　　-----------------
          Label7(1).BackColor = TKatBackCol(0)
     End If
 ''
+'               --- 型　No.の表示　一回送り　---
+                kataNoPnt = kataNoPnt + 1
+                If kataNoPnt > katamax Then kataNoPnt = 0
+'
+                For iii = katamax To 0 Step -1
+                    Label13(iii).Caption = kataNoHyj(katamax - iii + kataNoPnt + katamax + 1 + Val(kataNo(10)))
+                Next iii
+'
+                If (i_s_do) < katamax - 1 Then
+                    For iii = kataNoPnt + 1 To katamax
+                        Label13(iii).Caption = "空"
+                    Next iii
+                End If
+'
+' ---           型Ｎｏ．　１回送り完了
+'
 '/* カウンタへの出力ダウン */
     'InitDat(11) = InitDat(11) - 1   '成形カウンタトウタル
     'InitDtSave
@@ -3975,21 +3991,6 @@ caselend:   iHoteikanryou = 1
                   DoEvents           '  注意　このDoEventsを　Do　直後に移すと　誤動作する。　搬送終了2回待ちになる！！
                 Loop
 '
-'               --- 型　No.の表示　一回送り　---
-                kataNoPnt = kataNoPnt + 1
-                If kataNoPnt > katamax Then kataNoPnt = 0
-'
-                For iii = katamax To 0 Step -1
-                    Label13(iii).Caption = kataNoHyj(katamax - iii + kataNoPnt + katamax + 1 + Val(kataNo(10)))
-                Next iii
-'
-                If (i_s_do) < katamax - 1 Then
-                    For iii = kataNoPnt + 1 To katamax
-                        Label13(iii).Caption = "空"
-                    Next iii
-                End If
-'
-' ---           型Ｎｏ．　１回送り完了
               Case "W"    '成形終了
               End Select
           Case "E"    '/* 終了　ロボット搬送 */
@@ -4308,6 +4309,11 @@ send:
         End If
       End If
 '
+'/* coxデータのＨＤへの書き出し（毎回） */　2019.5.11追加
+'    　成形サイクルENDで毎回save
+      coxDtSet
+      coxDtSave gcoxFldir & gcoxFlName
+''
 ' ScreenCopy iflgSCopy=1 or 2  の場合、ScreenCopy
     Select Case iflgSCopy
         Case 1
